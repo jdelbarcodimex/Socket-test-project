@@ -49,7 +49,8 @@ const cutStateWord = () => {
   // pues mejor hacer un wrapper. llamar a la función
 }
 
-watch( () => piniaWord, (word) => {
+// para el watcher, hay que hacer tracking específicamente del valor de la variable de estado.
+watch( () => piniaWord.value, (word) => {
     console.log('cambio palabra. Envía a todos')
     socket.emit("cutWord", word)
   })
